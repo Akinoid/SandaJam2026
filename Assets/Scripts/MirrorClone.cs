@@ -7,10 +7,10 @@ public class MirrorClone : MonoBehaviour
 
     private Transform player;
     private Vector3 spawnPosition;   
-    private float spawnYaw;          
+            
 
     [Header("Beam")]
-    public Vector3 beamOriginOffset = new Vector3(0f, 1f, 0f);
+    public Vector3 beamOriginOffset = new Vector3(0f, 0f, 0f);
     public float beamForwardOffset = 0.15f;
 
     public Vector3 BeamOrigin => transform.position + beamOriginOffset + transform.forward * beamForwardOffset;
@@ -19,10 +19,7 @@ public class MirrorClone : MonoBehaviour
     public void Initialize(Transform playerTransform)
     {
         player = playerTransform;
-
-        
         spawnPosition = player.position;
-        spawnYaw = player.eulerAngles.y;
 
         transform.position = spawnPosition;
         transform.rotation = player.rotation;
@@ -38,14 +35,24 @@ public class MirrorClone : MonoBehaviour
     private void UpdateMirrorTransform()
     {
         
-        Vector3 mirroredPos = 2f * spawnPosition - player.position;
-        mirroredPos.y = spawnPosition.y; 
-        transform.position = mirroredPos;
+        Vector3 offset = player.position - spawnPosition;
+        Vector3 mirroredOffset = new Vector3(
+            offset.x,   
+            0f,
+            -offset.z   
+        );
 
+        Vector3 newPos = spawnPosition + mirroredOffset;
+        newPos.y = spawnPosition.y; 
+        transform.position = newPos;
         
-        float playerYaw = player.eulerAngles.y;
-        float mirroredYaw = 2f * spawnYaw - playerYaw;
-        transform.rotation = Quaternion.Euler(0f, mirroredYaw, 0f);
+        Vector3 playerForward = player.forward;
+        Vector3 mirroredForward = new Vector3(playerForward.x, 0f, -playerForward.z);
+
+        if (mirroredForward.sqrMagnitude > 0.001f)
+        {
+            transform.rotation = Quaternion.LookRotation(mirroredForward.normalized);
+        }
     }
 
     public void ToggleLock()

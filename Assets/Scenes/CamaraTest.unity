@@ -280,6 +280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IsometricMovement
   speed: 6
+  acceleration: 25
+  deceleration: 30
+  directionChangeAngleThreshold: 20
+  rotationSpeed: 720
+  movingThresholdFraction: 0.6
 --- !u!54 &326138315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -369,7 +374,7 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  originOffset: {x: 0, y: 1, z: 0}
+  originOffset: {x: 0, y: 0, z: 0}
   rayColor: {r: 1, g: 0, b: 0, a: 1}
   hitColor: {r: 0, g: 1, b: 0, a: 1}
   hitSphereRadius: 0.2
