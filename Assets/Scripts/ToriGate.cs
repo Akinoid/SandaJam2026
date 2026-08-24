@@ -6,9 +6,7 @@ public class ToriGate : MonoBehaviour
     [Header("Estado")]
     public bool IsOpen { get; private set; }
 
-    [Header("Visual / Física")]
-    public GameObject openVisual;
-    public GameObject closedVisual;
+    [Header("Visual / Física")]    
     public Collider blockingCollider; 
 
     private readonly HashSet<StoneLantern> activeSources = new HashSet<StoneLantern>();
@@ -34,9 +32,8 @@ public class ToriGate : MonoBehaviour
     {
         IsOpen = activeSources.Count > 0;
 
-        if (openVisual != null) openVisual.SetActive(IsOpen);
-        if (closedVisual != null) closedVisual.SetActive(!IsOpen);
         if (blockingCollider != null) blockingCollider.enabled = !IsOpen;
+        Debug.Log(IsOpen);
     }
 
     void OnDrawGizmos()
