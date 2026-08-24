@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.71
+      value: 35.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -72.0868
+      value: -72.103
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.612
+      value: 1.386
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a9420e4f348eea4a9672bd8d23c6433, type: 2}
     - target: {fileID: 919132149155446097, guid: efc3ae1269b531f47b11d7b46ace4fba, type: 3}
       propertyPath: m_Name
       value: TorrePiedraJapan
