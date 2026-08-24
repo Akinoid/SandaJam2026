@@ -15,7 +15,9 @@ public class StoneLantern : MonoBehaviour
 
     [Header("Visual (opcional)")]
     public Light lanternLight;
-    public GameObject litVisual;
+    public Light lanternLight2;
+
+    
 
     public bool IsLit { get; private set; }
 
@@ -85,7 +87,7 @@ public class StoneLantern : MonoBehaviour
     private void SetVisual(bool on)
     {
         if (lanternLight != null) lanternLight.enabled = on;
-        if (litVisual != null) litVisual.SetActive(on);
+        if (lanternLight2 != null) lanternLight2.enabled = on;        
     }
 
     void OnTriggerEnter(Collider other)
