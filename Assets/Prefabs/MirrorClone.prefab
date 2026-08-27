@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8731094548863585378}
   - component: {fileID: 386792281224667763}
   - component: {fileID: 7919928544017384143}
+  - component: {fileID: 4246891413466335826}
   - component: {fileID: 7801380579450729548}
-  - component: {fileID: 1688848093410439740}
-  m_Layer: 0
+  - component: {fileID: 6906446944591809115}
+  - component: {fileID: 4447610830521096259}
+  m_Layer: 6
   m_Name: MirrorClone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +94,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4246891413466335826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410349925244835521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2597a3ba24010424694f4e72098aadfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MirrorFragment
+  speed: 5
+  acceleration: 25
+  deceleration: 30
+  cam: {fileID: 0}
+  rotationSpeed: 1080
 --- !u!136 &7801380579450729548
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -107,7 +126,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -115,7 +134,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1688848093410439740
+--- !u!54 &6906446944591809115
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410349925244835521}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &4447610830521096259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +170,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4410349925244835521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bfeaa4a66895174b8260da0ff709dae, type: 3}
+  m_Script: {fileID: 11500000, guid: ea848fea37adabb47b6129f074ffb2ff, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MirrorClone
-  isLocked: 0
+  m_EditorClassIdentifier: Assembly-CSharp::LightReflector
   beamOriginOffset: {x: 0, y: 1, z: 0}
-  beamForwardOffset: 0.15
+  beamForwardOffset: 4.78
